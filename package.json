@@ -1,0 +1,24 @@
+{
+  "name": "network",
+  "version": "0.0.2",
+  "description": "Cross platform network utilities for Node.js (gateway_ip, MAC address, etc)",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "wmic": ""
+  },
+  "author": {
+    "name": "Tomas Pollak",
+    "email": "tomas@forkhq.com"
+  },
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "_id": "network@0.0.2",
+  "dist": {
+    "shasum": "cefe47f113585b1e9d3141deff677fac0fa9924e"
+  },
+  "_from": "network@",
+  "_resolved": "https://registry.npmjs.org/network/-/network-0.0.2.tgz"
+}
