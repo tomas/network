@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "network": "./bin/network" 
+  },
   "dependencies": {
     "needle": "",
     "wmic": ""
@@ -14,6 +17,9 @@
     "name": "Tomas Pollak",
     "email": "tomas@forkhq.com"
   },
-  "repository": { "type": "git", "url": "https://github.com/tomas/network.git" },
-  "license": "ISC"
+  "repository": { 
+    "type": "git", 
+    "url": "https://github.com/tomas/network.git" 
+  },
+  "license": "MIT"
 }

@@ -12,10 +12,10 @@ Network Utilies for Node.js
 Returns your public IP address, as reported by DynDNS.org.
 
 ``` js
-  var network = require('network');
-  network.get_public_ip(function(err, ip) {
-    console.log(err || ip); // should return your public IP address
-  })
+var network = require('network');
+network.get_public_ip(function(err, ip) {
+  console.log(err || ip); // should return your public IP address
+})
 ```
 
 ## Get private IP
@@ -23,9 +23,9 @@ Returns your public IP address, as reported by DynDNS.org.
 Returns the IP address assigned to your first active network inteface.
 
 ``` js
-  network.get_private_ip(function(err, ip) {
-    console.log(err || ip); // err may be 'No active network interface found'.
-  })
+network.get_private_ip(function(err, ip) {
+  console.log(err || ip); // err may be 'No active network interface found'.
+})
 ```
 
 ## Get gateway IP
@@ -33,53 +33,53 @@ Returns the IP address assigned to your first active network inteface.
 Returns the IP address assigned to your first active network inteface.
 
 ``` js
-  network.get_gateway_ip(function(err, ip) {
-    console.log(err || ip); // err may be 'No active network interface found.'
-  })
+network.get_gateway_ip(function(err, ip) {
+  console.log(err || ip); // err may be 'No active network interface found.'
+})
 ```
-## Get active network interface
+## Get active interface
 
 Returns the IP address, MAC address and gateway IP address for the active
 network interface.
 
 ``` js
-  network.get_active_network_interface(function(err, obj) {
+network.get_active_interface(function(err, obj) {
 
-    /* obj should be:
+  /* obj should be:
 
-    { name: 'eth0',
-      ip_address: '10.0.1.3',
-      mac_address: '56:e5:f9:e4:38:1d',
-      type: 'Wired',
-      netmask: '255.255.255.0',
-      gateway_ip: '10.0.1.1' }
+  { name: 'eth0',
+    ip_address: '10.0.1.3',
+    mac_address: '56:e5:f9:e4:38:1d',
+    type: 'Wired',
+    netmask: '255.255.255.0',
+    gateway_ip: '10.0.1.1' }
 
-    */
-  })
+  */
+})
 ```
 
-## Get network interfaces list
+## Get interfaces list
 
 Returns list of network interfaces, including MAC addresses and the such, just
 as in the example above.
 
 ``` js
-  network.get_network_interfaces_list(function(err, list) {
+network.get_interfaces_list(function(err, list) {
 
-    /* list should be:
+  /* list should be:
 
-    [{
-      name: 'eth0',
-      ip_address: '10.0.1.3',
-      mac_address: '56:e5:f9:e4:38:1d',
-      type: 'Wired',
-      netmask: '255.255.255.0',
-      gateway_ip: '10.0.1.1'
-     },
-     { ... }, { ... }]
+  [{
+    name: 'eth0',
+    ip_address: '10.0.1.3',
+    mac_address: '56:e5:f9:e4:38:1d',
+    type: 'Wired',
+    netmask: '255.255.255.0',
+    gateway_ip: '10.0.1.1'
+   },
+   { ... }, { ... }]
 
-    */
-  })
+  */
+})
 ```
 
 # Copyright

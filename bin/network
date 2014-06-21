@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+var network  = require('..'),
+    command  = process.argv[2],
+    format   = (process.argv[3] || 'text').toLowerCase();
+
+function print(str) {
+  // process.stdout.write(str);
+  console.log(str);
+}
+
+function callback(command) {
+
+  return function(err, res) {
+    if (err) return console.log(err);
+
+    if (format == 'json')
+      print(JSON.stringify(res, null, 2));
+    // else if (format == 'xml')
+    //  print(to_xml(res));
+    else 
+      print(res);
+  }
+
+}
+
+if (command && network['get_' + command]) {
+  network['get_' + command](callback(command));
+} else {
+  var list = Object.keys(network).map(function(el) { return el.replace('get_', '') });
+  console.log('Usage: network [command] [format]');
+  console.log('Available commands: ' + list.join(', '));
+  console.log('Format can be: json or text (default).')
+}
