@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "needle": "",
-    "wmic": "0.0.4"
+    "wmic": "0.0.5"
   },
   "author": {
     "name": "Tomas Pollak",
