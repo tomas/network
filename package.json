@@ -7,19 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "network": "./bin/network" 
+    "network": "./bin/network"
   },
   "dependencies": {
     "needle": "",
-    "wmic": ""
+    "wmic": "0.0.4"
   },
   "author": {
     "name": "Tomas Pollak",
     "email": "tomas@forkhq.com"
   },
-  "repository": { 
-    "type": "git", 
-    "url": "https://github.com/tomas/network.git" 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomas/network.git"
   },
   "license": "MIT"
 }
