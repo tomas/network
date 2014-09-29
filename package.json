@@ -10,8 +10,8 @@
     "network": "./bin/network"
   },
   "dependencies": {
-    "needle": "",
-    "wmic": "0.0.5"
+    "needle": "^0.7.10",
+    "wmic": "0.0.6"
   },
   "author": {
     "name": "Tomas Pollak",
