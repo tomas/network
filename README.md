@@ -39,8 +39,8 @@ network.get_gateway_ip(function(err, ip) {
 ```
 ## Get active interface
 
-Returns the IP address, MAC address and gateway IP address for the active
-network interface.
+Returns the IP, MAC address and interface type for the active network 
+interface. On OS X and Linux you also get the IP of its assigned gateway.
 
 ``` js
 network.get_active_interface(function(err, obj) {
@@ -74,7 +74,7 @@ network.get_interfaces_list(function(err, list) {
     mac_address: '56:e5:f9:e4:38:1d',
     type: 'Wired',
     netmask: '255.255.255.0',
-    gateway_ip: '10.0.1.1'
+    gateway_ip: '10.0.1.1' // only on OS X and Linux
    },
    { ... }, { ... }]
 
@@ -84,7 +84,7 @@ network.get_interfaces_list(function(err, list) {
 
 # Copyright
 
-Written by Tomás Pollak. Copyright (c) 2014 Fork, Ltd.
+Written by Tomás Pollak. Copyright (c) Fork, Ltd.
 
 # License
 
