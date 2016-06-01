@@ -10,6 +10,7 @@
     "network": "./bin/network"
   },
   "dependencies": {
+    "async": "^1.5.2",
     "needle": "^0.7.10",
     "wmic": "0.0.6"
   },
