@@ -9,10 +9,11 @@ Network Utilies for Node.js
 
 ## Get public IP
 
-Returns your public IP address, as reported by DynDNS.org.
+Returns your public IP address, as reported by DynDNS.org or other services.
 
 ``` js
 var network = require('network');
+
 network.get_public_ip(function(err, ip) {
   console.log(err || ip); // should return your public IP address
 })
@@ -30,7 +31,7 @@ network.get_private_ip(function(err, ip) {
 
 ## Get gateway IP
 
-Returns the IP address assigned to your first active network inteface.
+Returns the IP of the gateway that your active network interface is linked to.
 
 ``` js
 network.get_gateway_ip(function(err, ip) {
@@ -39,7 +40,7 @@ network.get_gateway_ip(function(err, ip) {
 ```
 ## Get active interface
 
-Returns the IP, MAC address and interface type for the active network 
+Returns the IP, MAC address and interface type for the active network
 interface. On OS X and Linux you also get the IP of its assigned gateway.
 
 ``` js
