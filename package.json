@@ -1,6 +1,7 @@
 {
   "name": "network",
   "version": "0.3.0",
+  "private": true,
   "description": "Cross platform network utilities for Node.js (gateway_ip, MAC address, etc)",
   "main": "./lib/index.js",
   "scripts": {
