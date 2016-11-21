@@ -19,7 +19,6 @@ network.get_public_ip(function(err, ip) {
 })
 ```
 
-
 ##### CLI:
 
     $ network public_ip
@@ -75,7 +74,7 @@ network.get_active_interface(function(err, obj) {
 
 ##### CLI:
 
-    $ network gateway_ip
+    $ network active_interface
 
 ## Get interfaces list
 
