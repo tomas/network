@@ -19,7 +19,7 @@ network.get_public_ip(function(err, ip) {
 })
 ```
 
-##### CLI:
+##### CLI
 
     $ network public_ip
 
@@ -33,7 +33,7 @@ network.get_private_ip(function(err, ip) {
 })
 ```
 
-##### CLI:
+##### CLI
 
     $ network private_ip
 
@@ -47,7 +47,7 @@ network.get_gateway_ip(function(err, ip) {
 })
 ```
 
-##### CLI:
+##### CLI
 
     $ network gateway_ip
 
@@ -72,7 +72,7 @@ network.get_active_interface(function(err, obj) {
 })
 ```
 
-##### CLI:
+##### CLI
 
     $ network active_interface
 
@@ -100,7 +100,7 @@ network.get_interfaces_list(function(err, list) {
 })
 ```
 
-##### CLI:
+##### CLI
 
     $ network interfaces_list
 
