@@ -19,6 +19,10 @@ network.get_public_ip(function(err, ip) {
 })
 ```
 
+##### CLI
+
+    $ network public_ip
+
 ## Get private IP
 
 Returns the IP address assigned to your first active network inteface.
@@ -29,6 +33,10 @@ network.get_private_ip(function(err, ip) {
 })
 ```
 
+##### CLI
+
+    $ network private_ip
+
 ## Get gateway IP
 
 Returns the IP of the gateway that your active network interface is linked to.
@@ -38,6 +46,11 @@ network.get_gateway_ip(function(err, ip) {
   console.log(err || ip); // err may be 'No active network interface found.'
 })
 ```
+
+##### CLI
+
+    $ network gateway_ip
+
 ## Get active interface
 
 Returns the IP, MAC address and interface type for the active network
@@ -58,6 +71,10 @@ network.get_active_interface(function(err, obj) {
   */
 })
 ```
+
+##### CLI
+
+    $ network active_interface
 
 ## Get interfaces list
 
@@ -82,6 +99,10 @@ network.get_interfaces_list(function(err, list) {
   */
 })
 ```
+
+##### CLI
+
+    $ network interfaces_list
 
 # TODO
 
