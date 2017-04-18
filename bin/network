@@ -1,34 +1,149 @@
 #!/usr/bin/env node
 
-var network  = require('..'),
-    command  = process.argv[2],
-    format   = (process.argv[3] || 'text').toLowerCase();
+var program = require('commander')
 
-function print(str) {
-  // process.stdout.write(str);
-  console.log(str);
+var network = require('..')
+var pkg = require('../package.json')
+
+function print (results, json) {
+  if (json) console.log(JSON.stringify(results, null, 2))
+  else console.log(results)
 }
 
-function callback(command) {
+program.version(pkg.version)
 
-  return function(err, res) {
-    if (err) return console.log(err);
+program
+  .command('public_ip')
+  .description('Print public ip address')
+  .option('-j --json', 'Print results in JSON format')
+  .on('--help', function () {
+    console.log('  Examples:')
+    console.log()
+    console.log('    $ network public_ip')
+    console.log()
+  })
+  .action(function () {
+    network.get_public_ip(function (err, results) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
 
-    if (format == 'json')
-      print(JSON.stringify(res, null, 2));
-    // else if (format == 'xml')
-    //  print(to_xml(res));
-    else 
-      print(res);
-  }
+      print(results, program.json)
+      process.exit(0)
+    })
+  })
 
-}
+program
+  .command('private_ip')
+  .description('Print private ip address')
+  .option('-j --json', 'Print results in JSON format')
+  .on('--help', function () {
+    console.log('  Examples:')
+    console.log()
+    console.log('    $ network private_ip')
+    console.log()
+  })
+  .action(function () {
+    network.get_private_ip(function (err, results) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
 
-if (command && network['get_' + command]) {
-  network['get_' + command](callback(command));
-} else {
-  var list = Object.keys(network).map(function(el) { return el.replace('get_', '') });
-  console.log('Usage: network [command] [format]');
-  console.log('Available commands: ' + list.join(', '));
-  console.log('Format can be: json or text (default).')
-}
+      print(results, program.json)
+      process.exit(0)
+    })
+  })
+
+program
+  .command('mac_address_for <interface>')
+  .description('Print mac address for given network interface')
+  .option('-j --json', 'Print results in JSON format')
+  .on('--help', function () {
+    console.log('  Examples:')
+    console.log()
+    console.log('    $ network mac_address_for Wi-Fi')
+    console.log()
+  })
+  .action(function (nInterface) {
+    network.mac_address_for(nInterface, function (err, results) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
+
+      print(results, program.json)
+      process.exit(0)
+    })
+  })
+
+program
+  .command('gateway_ip')
+  .description('Print gateway ip address')
+  .option('-j --json', 'Print results in JSON format')
+  .on('--help', function () {
+    console.log('  Examples:')
+    console.log()
+    console.log('    $ network gateway_ip')
+    console.log()
+  })
+  .action(function () {
+    network.get_gateway_ip(function (err, results) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
+
+      print(results, program.json)
+      process.exit(0)
+    })
+  })
+
+program
+  .command('active_interface')
+  .description('Print active network interface')
+  .option('-j --json', 'Print results in JSON format')
+  .on('--help', function () {
+    console.log('  Examples:')
+    console.log()
+    console.log('    $ network active_interface')
+    console.log()
+  })
+  .action(function () {
+    network.get_active_interface(function (err, results) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
+
+      print(results, program.json)
+      process.exit(0)
+    })
+  })
+
+program
+  .command('interfaces_list')
+  .description('Print all network interfaces')
+  .option('-j --json', 'Print results in JSON format')
+  .on('--help', function () {
+    console.log('  Examples:')
+    console.log()
+    console.log('    $ network interfaces_list')
+    console.log()
+  })
+  .action(function () {
+    network.get_interfaces_list(function (err, results) {
+      if (err) {
+        console.error(err)
+        process.exit(1)
+      }
+
+      print(results, program.json)
+      process.exit(0)
+    })
+  })
+
+program.parse(process.argv)
+
+if (!program.args.length) program.help()
