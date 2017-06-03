@@ -104,10 +104,6 @@ network.get_interfaces_list(function(err, list) {
 
     $ network interfaces_list
 
-# TODO
-
-- Find a way to get the gateway IP for interfaces on Windows. Help wanted!
-
 # Copyright
 
 Written by Tomás Pollak. Copyright (c) Fork, Ltd.
