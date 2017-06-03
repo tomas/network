@@ -92,7 +92,7 @@ network.get_interfaces_list(function(err, list) {
     mac_address: '56:e5:f9:e4:38:1d',
     type: 'Wired',
     netmask: '255.255.255.0',
-    gateway_ip: '10.0.1.1' // only on OS X and Linux
+    gateway_ip: '10.0.1.1' 
    },
    { ... }, { ... }]
 
