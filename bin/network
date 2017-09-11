@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-var program = require('commander')
+var program = require('commander'),
+    network = require('..'),
+    pkg     = require('../package.json');
 
-var network = require('..')
-var pkg = require('../package.json')
-
-function print (results, json) {
+function print(results, json) {
   if (json) console.log(JSON.stringify(results, null, 2))
   else console.log(results)
 }
