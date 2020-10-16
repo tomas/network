@@ -1,4 +1,4 @@
-Network Utilies for Node.js
+Network Utilies For Node.js
 ===========================
 
 # Install
@@ -7,7 +7,7 @@ Network Utilies for Node.js
 
 # Usage
 
-## Get public IP
+## Get Public IP
 
 Returns your public IP address, as reported by DynDNS.org or other services.
 
@@ -23,7 +23,7 @@ network.get_public_ip(function(err, ip) {
 
     $ network public_ip
 
-## Get private IP
+## Get Private IP
 
 Returns the IP address assigned to your first active network inteface.
 
@@ -37,7 +37,7 @@ network.get_private_ip(function(err, ip) {
 
     $ network private_ip
 
-## Get gateway IP
+## Get Gateway IP
 
 Returns the IP of the gateway that your active network interface is linked to.
 
@@ -51,7 +51,7 @@ network.get_gateway_ip(function(err, ip) {
 
     $ network gateway_ip
 
-## Get active interface
+## Get Active Interface
 
 Returns the IP, MAC address and interface type for the active network
 interface. On OS X and Linux you also get the IP of its assigned gateway.
@@ -76,7 +76,7 @@ network.get_active_interface(function(err, obj) {
 
     $ network active_interface
 
-## Get interfaces list
+## Get Interfaces List
 
 Returns list of network interfaces, including MAC addresses and the such, just
 as in the example above.
